@@ -70,7 +70,7 @@
     
     // Configure the cell...
     
-    cell.textLabel.text = @"Test";
+    cell.textLabel.text = @"Test Reset";
     
     return cell;
 }
