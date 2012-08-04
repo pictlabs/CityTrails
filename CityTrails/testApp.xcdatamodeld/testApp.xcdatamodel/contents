@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1803" systemVersion="12A269" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AttendeeList" syncable="YES"/>
+    <entity name="Attraction" syncable="YES">
+        <attribute name="attractionCity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attractionLatitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="attractionLongitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="attractionOverviewText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attractionState" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attractionTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attractionType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="attractionZipcode" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="containedBy" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="contains" inverseEntity="Region" syncable="YES"/>
+    </entity>
+    <entity name="Band" syncable="YES"/>
+    <entity name="Concert" syncable="YES"/>
+    <entity name="Festival" syncable="YES"/>
+    <entity name="Gathering" syncable="YES"/>
+    <entity name="HistoricalDate" syncable="YES"/>
+    <entity name="HistoricalTimeline" syncable="YES"/>
+    <entity name="Menu" syncable="YES"/>
+    <entity name="Region" syncable="YES">
+        <attribute name="attractionCount" attributeType="Integer 32" minValueString="1" defaultValueString="1" syncable="YES"/>
+        <attribute name="regionCity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="regionLatitude" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="regionLongitude" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="regionOverviewText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="regionState" optional="YES" attributeType="String" minValueString="2" syncable="YES"/>
+        <attribute name="regionTitle" attributeType="String" maxValueString="50" syncable="YES"/>
+        <attribute name="regionZipcode" attributeType="String" minValueString="5" maxValueString="9" syncable="YES"/>
+        <relationship name="contains" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Attraction" inverseName="containedBy" inverseEntity="Attraction" syncable="YES"/>
+    </entity>
+    <entity name="Restaurant" syncable="YES"/>
+    <entity name="Sport" syncable="YES"/>
+    <entity name="Venue" syncable="YES"/>
+    <entity name="Walk" syncable="YES"/>
+    <entity name="Waypoints" syncable="YES"/>
+    <elements>
+        <element name="AttendeeList" positionX="-434" positionY="261" width="128" height="45"/>
+        <element name="Attraction" positionX="-36" positionY="2" width="128" height="178"/>
+        <element name="Band" positionX="-432" positionY="72" width="128" height="45"/>
+        <element name="Concert" positionX="-272" positionY="72" width="128" height="45"/>
+        <element name="Festival" positionX="-272" positionY="135" width="128" height="45"/>
+        <element name="Gathering" positionX="-272" positionY="261" width="128" height="45"/>
+        <element name="HistoricalDate" positionX="-38" positionY="342" width="128" height="45"/>
+        <element name="HistoricalTimeline" positionX="-38" positionY="261" width="128" height="45"/>
+        <element name="Menu" positionX="-434" positionY="-54" width="128" height="45"/>
+        <element name="Region" positionX="-36" positionY="-295" width="128" height="178"/>
+        <element name="Restaurant" positionX="-272" positionY="-54" width="128" height="45"/>
+        <element name="Sport" positionX="-272" positionY="198" width="128" height="45"/>
+        <element name="Venue" positionX="-432" positionY="135" width="128" height="45"/>
+        <element name="Walk" positionX="-272" positionY="9" width="128" height="45"/>
+        <element name="Waypoints" positionX="-434" positionY="9" width="128" height="45"/>
+    </elements>
+</model>

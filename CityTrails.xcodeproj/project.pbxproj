@@ -17,6 +17,7 @@
 		D465F109159A4D5400785AE2 /* CTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D465F108159A4D5400785AE2 /* CTAppDelegate.m */; };
 		D481E31B159E3862007F9065 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D481E31A159E3862007F9065 /* Default.png */; };
 		D481E31D159E3869007F9065 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D481E31C159E3869007F9065 /* Default@2x.png */; };
+		D4C82E2D15CDA57F005A0364 /* testApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4C82E2B15CDA57F005A0364 /* testApp.xcdatamodeld */; };
 		D4D327B815A2A60A003C20E9 /* CTViewControllerTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D327B715A2A60A003C20E9 /* CTViewControllerTemp.m */; };
 		D4E0A7CB159D712E00D7181B /* CTHomeScreenCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E0A7CA159D712E00D7181B /* CTHomeScreenCollectionViewCell.m */; };
 		D4E0A7CE159D745100D7181B /* CTHomeScreenCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E0A7CD159D745100D7181B /* CTHomeScreenCollectionViewFlowLayout.m */; };
@@ -41,6 +42,7 @@
 		D465F108159A4D5400785AE2 /* CTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTAppDelegate.m; sourceTree = "<group>"; };
 		D481E31A159E3862007F9065 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D481E31C159E3869007F9065 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D4C82E2C15CDA57F005A0364 /* testApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = testApp.xcdatamodel; sourceTree = "<group>"; };
 		D4D327B615A2A60A003C20E9 /* CTViewControllerTemp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTViewControllerTemp.h; sourceTree = "<group>"; };
 		D4D327B715A2A60A003C20E9 /* CTViewControllerTemp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTViewControllerTemp.m; sourceTree = "<group>"; };
 		D4E0A7C9159D712E00D7181B /* CTHomeScreenCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHomeScreenCollectionViewCell.h; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		D465F0FE159A4D5400785AE2 /* CityTrails */ = {
 			isa = PBXGroup;
 			children = (
+				D4C82E2B15CDA57F005A0364 /* testApp.xcdatamodeld */,
 				D465F107159A4D5400785AE2 /* CTAppDelegate.h */,
 				D465F108159A4D5400785AE2 /* CTAppDelegate.m */,
 				D4031C3B159D64140033E4CF /* CTHomeScreenCollectionViewController.h */,
@@ -209,6 +212,7 @@
 				D4E0A7CE159D745100D7181B /* CTHomeScreenCollectionViewFlowLayout.m in Sources */,
 				D4575F72159EB1D30033F8E6 /* CTRegionTourListTableViewController.m in Sources */,
 				D4D327B815A2A60A003C20E9 /* CTViewControllerTemp.m in Sources */,
+				D4C82E2D15CDA57F005A0364 /* testApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +319,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D4C82E2B15CDA57F005A0364 /* testApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D4C82E2C15CDA57F005A0364 /* testApp.xcdatamodel */,
+			);
+			currentVersion = D4C82E2C15CDA57F005A0364 /* testApp.xcdatamodel */;
+			path = testApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D465F0EB159A4D5400785AE2 /* Project object */;
 }
