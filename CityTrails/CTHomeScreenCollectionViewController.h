@@ -11,8 +11,8 @@
 #import "CTRegionTourListTableViewController.h"
 
 @interface CTHomeScreenCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate>
-{
-    
-}
+
+@property (nonatomic,strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSArray *Regions;
 
 @end

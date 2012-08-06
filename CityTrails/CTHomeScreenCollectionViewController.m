@@ -14,6 +14,8 @@
 
 @implementation CTHomeScreenCollectionViewController
 
+@synthesize managedObjectContext, Regions;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -21,8 +23,15 @@
     
     [self.collectionView registerClass:[CTHomeScreenCollectionViewCell class] forCellWithReuseIdentifier:@"MY_CELL"];
     
-    UINavigationItem *navTile = [self navigationItem];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Region" inManagedObjectContext:managedObjectContext];
+    //NSEntityDescription *entity = [NSEntityDescription entityForName:@"Region" inManagedObjectContext:context];
     
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    self.Regions = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    UINavigationItem *navTile = [self navigationItem];
     [navTile setTitle:@"City Trails"];
     self.navigationController.navigationBar.tintColor = [UIColor grayColor];
 }
@@ -39,14 +48,17 @@
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
 {
-    return 8;
+    return [Regions count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
     CTHomeScreenCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"MY_CELL" forIndexPath:indexPath];
     
-    cell.label.text = @"City Trails";
+    
+    // Set up the cell...
+    NSManagedObject *region =  [Regions objectAtIndex:indexPath.row];
+    cell.label.text = [region valueForKey:@"regionTitle"];
     
     
     return cell;
