@@ -36,20 +36,20 @@
     <entity name="Walk" syncable="YES"/>
     <entity name="Waypoints" syncable="YES"/>
     <elements>
-        <element name="AttendeeList" positionX="-434" positionY="261" width="128" height="45"/>
+        <element name="Region" positionX="-36" positionY="-295" width="128" height="178"/>
         <element name="Attraction" positionX="-36" positionY="2" width="128" height="178"/>
-        <element name="Band" positionX="-432" positionY="72" width="128" height="45"/>
+        <element name="HistoricalTimeline" positionX="-38" positionY="261" width="128" height="45"/>
+        <element name="Restaurant" positionX="-272" positionY="-54" width="128" height="45"/>
+        <element name="Walk" positionX="-272" positionY="9" width="128" height="45"/>
         <element name="Concert" positionX="-272" positionY="72" width="128" height="45"/>
         <element name="Festival" positionX="-272" positionY="135" width="128" height="45"/>
+        <element name="Sport" positionX="-272" positionY="198" width="128" height="45"/>
         <element name="Gathering" positionX="-272" positionY="261" width="128" height="45"/>
         <element name="HistoricalDate" positionX="-38" positionY="342" width="128" height="45"/>
-        <element name="HistoricalTimeline" positionX="-38" positionY="261" width="128" height="45"/>
         <element name="Menu" positionX="-434" positionY="-54" width="128" height="45"/>
-        <element name="Region" positionX="-36" positionY="-295" width="128" height="178"/>
-        <element name="Restaurant" positionX="-272" positionY="-54" width="128" height="45"/>
-        <element name="Sport" positionX="-272" positionY="198" width="128" height="45"/>
-        <element name="Venue" positionX="-432" positionY="135" width="128" height="45"/>
-        <element name="Walk" positionX="-272" positionY="9" width="128" height="45"/>
         <element name="Waypoints" positionX="-434" positionY="9" width="128" height="45"/>
+        <element name="Band" positionX="-432" positionY="72" width="128" height="45"/>
+        <element name="Venue" positionX="-432" positionY="135" width="128" height="45"/>
+        <element name="AttendeeList" positionX="-434" positionY="261" width="128" height="45"/>
     </elements>
 </model>
