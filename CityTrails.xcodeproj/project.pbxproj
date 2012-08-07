@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D4031C3D159D64140033E4CF /* CTHomeScreenCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4031C3C159D64140033E4CF /* CTHomeScreenCollectionViewController.m */; };
 		D412539515CF9522006A40BD /* CityTrails.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D412539315CF9522006A40BD /* CityTrails.xcdatamodeld */; };
+		D41253A615D0D591006A40BD /* SQLiteImporter.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D41253A515D0D591006A40BD /* SQLiteImporter.sqlite */; };
 		D4575F72159EB1D30033F8E6 /* CTRegionTourListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4575F70159EB1D30033F8E6 /* CTRegionTourListTableViewController.m */; };
 		D465F0F9159A4D5400785AE2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D465F0F8159A4D5400785AE2 /* UIKit.framework */; };
 		D465F0FB159A4D5400785AE2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D465F0FA159A4D5400785AE2 /* Foundation.framework */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		D4031C3B159D64140033E4CF /* CTHomeScreenCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHomeScreenCollectionViewController.h; sourceTree = "<group>"; };
 		D4031C3C159D64140033E4CF /* CTHomeScreenCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHomeScreenCollectionViewController.m; sourceTree = "<group>"; };
+		D41253A515D0D591006A40BD /* SQLiteImporter.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = SQLiteImporter.sqlite; path = "../../../Library/Developer/Xcode/DerivedData/SQLiteImporter-bguheausmkwtwobievidsjjsedey/Build/Products/Debug/SQLiteImporter.sqlite"; sourceTree = "<group>"; };
 		D4575F6F159EB1D30033F8E6 /* CTRegionTourListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTRegionTourListTableViewController.h; sourceTree = "<group>"; };
 		D4575F70159EB1D30033F8E6 /* CTRegionTourListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTRegionTourListTableViewController.m; sourceTree = "<group>"; };
 		D465F0F4159A4D5400785AE2 /* CityTrails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityTrails.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,7 @@
 		D465F0FE159A4D5400785AE2 /* CityTrails */ = {
 			isa = PBXGroup;
 			children = (
+				D41253A515D0D591006A40BD /* SQLiteImporter.sqlite */,
 				D412539315CF9522006A40BD /* CityTrails.xcdatamodeld */,
 				D465F107159A4D5400785AE2 /* CTAppDelegate.h */,
 				D465F108159A4D5400785AE2 /* CTAppDelegate.m */,
@@ -193,6 +196,7 @@
 				D481E31D159E3869007F9065 /* Default@2x.png in Resources */,
 				D4E8C09C15A7D77E001C4E5C /* Icon@2x.png in Resources */,
 				D4E8C09F15A7D783001C4E5C /* Icon.png in Resources */,
+				D41253A615D0D591006A40BD /* SQLiteImporter.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,9 +325,7 @@
 		D412539315CF9522006A40BD /* CityTrails.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D412539415CF9522006A40BD /* testApp.xcdatamodel */,
 			);
-			currentVersion = D412539415CF9522006A40BD /* testApp.xcdatamodel */;
 			path = CityTrails.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

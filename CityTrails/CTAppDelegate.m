@@ -146,15 +146,15 @@
     }
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"CityTrails"];
-    /*if (![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
-        NSURL *preloadURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"CityTrails" ofType:@"sqlite"]];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
+        NSURL *preloadURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"SQLiteImporter" ofType:@"sqlite"]];
         NSError* err = nil;
         
         if (![[NSFileManager defaultManager] copyItemAtURL:preloadURL toURL:storeURL error:&err]) {
-            NSLog(@"Oops, could copy preloaded data");
+            NSLog(@"Oops, couldn't copy preloaded data");
         }
-    }*/
-    
+    }
+       
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
