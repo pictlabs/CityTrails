@@ -16,10 +16,12 @@
 {
     self = [super init];
     if (self) {
-        self.itemSize = CGSizeMake(ITEM_SIZE, ITEM_SIZE);
+        
+        //self.itemSize = CGSizeMake(ITEM_SIZE, ITEM_SIZE);
         //self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        self.sectionInset = UIEdgeInsetsMake(10.0,10.0, 10.0, 10.0);
-        //self.minimumLineSpacing = 50.0;
+        self.sectionInset = UIEdgeInsetsMake(5.0, 0.0, 0.0, 0.0);
+        self.minimumInteritemSpacing = 5.0;
+        self.minimumLineSpacing = 5.0;
     }
     return self;
 }
@@ -27,7 +29,7 @@
 -(void)applyCustomizationToLayoutAttributes:(UICollectionViewLayoutAttributes*)layoutAttributes
 {
     //Customize layoutAttributes here
-    
+  
 }
 
 -(NSArray*)layoutAttributesForElementsInRect:(CGRect)rect
@@ -49,4 +51,6 @@
     
     return attributes;
 }
+
+
 @end

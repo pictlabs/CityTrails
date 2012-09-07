@@ -34,12 +34,14 @@
     UINavigationItem *navTile = [self navigationItem];
     [navTile setTitle:@"City Trails"];
     self.navigationController.navigationBar.tintColor = [UIColor grayColor];
+    
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"Item Tapped");
-    CTRegionTourListTableViewController *regionTourListTableViewController = [[CTRegionTourListTableViewController alloc] init];
+
+    CTRegionTourListTableViewController *regionTourListTableViewController = [[CTRegionTourListTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     
     //Push the view onto the navigation controller
     [[self navigationController] pushViewController:regionTourListTableViewController animated:YES];
@@ -59,7 +61,7 @@
     // Set up the cell...
     NSManagedObject *region =  [Regions objectAtIndex:indexPath.row];
     cell.label.text = [region valueForKey:@"regionTitle"];
-    
+      cell.label2.text = [region valueForKey:@"regionTitle"];
     
     return cell;
 }
@@ -74,6 +76,36 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration
+{
+    
+   //reload all sections of the collectionView with the proper sized cells when the orientation changes
+    
+    [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+    
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    //use the bounds.size.width and bounds.size.height of the collectionView to make the cells. Subtracting 5 and 10 from these values as these are the insets & interim/line spacing declared in cthomescreencollectionviewflowlayout.m
+        
+    CGSize size = CGSizeMake((collectionView.bounds.size.width - 5)/2, (collectionView.bounds.size.height - 10)/2);
+    
+    return size;
+    
+}
+
+
+//bug fix so that when we come back from regiontourlisttableviewcontroller, the collectionview reloads with the proper cell height/width
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    //[super viewWillAppear: animated];
+    [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+    
 }
 
 @end

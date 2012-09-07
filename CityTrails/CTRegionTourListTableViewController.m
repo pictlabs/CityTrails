@@ -27,15 +27,42 @@
 {
     [super viewDidLoad];
     
-    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+   
+    
+    CGRect rect = CGRectMake(0.0 ,0.0, self.tableView.bounds.size.width, self.tableView.bounds.size.height);
+     UIView *blackOverlay = [[UIView alloc] initWithFrame:rect];
+     blackOverlay.alpha = 0.65;
+     blackOverlay.backgroundColor = UIColor.blackColor;
+     blackOverlay.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+     [self.tableView insertSubview:blackOverlay aboveSubview:self.tableView];
+     
 
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(blackOverlay.bounds.size.width/4, blackOverlay.bounds.size.height-60, blackOverlay.bounds.size.width/2, 40.0)];
+    label.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleTopMargin;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont boldSystemFontOfSize:14.0];
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor orangeColor];
+    label.text = @"Tap To Dismiss";
+    label.layer.borderColor = [UIColor orangeColor].CGColor;
+    label.layer.borderWidth = 1.0f;
+    
+    [blackOverlay addSubview:label];
 
+        
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration
+{
+
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,7 +87,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
  // Return the number of rows in the section.
-    return 3;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -10,4 +10,6 @@
 
 @interface CTRegionTourListTableViewController : UITableViewController
 
+@property UIView *blackOverlay;
+
 @end

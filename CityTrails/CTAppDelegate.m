@@ -24,6 +24,9 @@
     // Override point for customization after application launch.
     
     // Core Data Model Setup
+    
+    /* MAW 08/30/2012 - I bypassed this as it was creating another cell that wasn't coming from SQL, not sure what it's doing as I don't understand this at all!! :)
+     
     NSManagedObjectContext *context = [self managedObjectContext];
     NSManagedObject *regionInfo = [NSEntityDescription
                                        insertNewObjectForEntityForName:@"Region"
@@ -40,7 +43,7 @@
     NSError *error;
     if (![context save:&error]) {
         NSLog(@"Whoops, couldn't saverichs: %@", [error localizedDescription]);
-    }
+    }*/
     
     //Create and use the default init for our flowlayout subclass
      // Flow Layout can be cusotmized in its init routine local to its class

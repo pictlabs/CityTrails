@@ -10,9 +10,9 @@
 #import "CTHomeScreenCollectionViewCell.h"
 #import "CTRegionTourListTableViewController.h"
 
-@interface CTHomeScreenCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface CTHomeScreenCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic,strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic,strong)  NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSArray *Regions;
 
 @end
