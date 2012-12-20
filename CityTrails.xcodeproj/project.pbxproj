@@ -19,11 +19,16 @@
 		D465F109159A4D5400785AE2 /* CTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D465F108159A4D5400785AE2 /* CTAppDelegate.m */; };
 		D481E31B159E3862007F9065 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D481E31A159E3862007F9065 /* Default.png */; };
 		D481E31D159E3869007F9065 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D481E31C159E3869007F9065 /* Default@2x.png */; };
+		D4E08D571683BF9A0051313A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E08D561683BF9A0051313A /* Default-568h@2x.png */; };
 		D4E0A7CB159D712E00D7181B /* CTHomeScreenCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E0A7CA159D712E00D7181B /* CTHomeScreenCollectionViewCell.m */; };
 		D4E0A7CE159D745100D7181B /* CTHomeScreenCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E0A7CD159D745100D7181B /* CTHomeScreenCollectionViewFlowLayout.m */; };
 		D4E8C09C15A7D77E001C4E5C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E8C09B15A7D77E001C4E5C /* Icon@2x.png */; };
 		D4E8C09F15A7D783001C4E5C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E8C09E15A7D783001C4E5C /* Icon.png */; };
 		D4EA709A15CF7EF600F87A15 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4EA709915CF7EF600F87A15 /* CoreData.framework */; };
+		D4F5F34C15FD82C4006A403E /* OTR.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D4F5F34B15FD82C4006A403E /* OTR.jpeg */; };
+		D4F5F35415FD86C0006A403E /* Clifton.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D4F5F35315FD86C0006A403E /* Clifton.jpeg */; };
+		D4F5F35615FD86C3006A403E /* Newport.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D4F5F35515FD86C3006A403E /* Newport.jpeg */; };
+		D4F5F35815FD86F4006A403E /* Cincinnati.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D4F5F35715FD86F4006A403E /* Cincinnati.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +49,7 @@
 		D465F108159A4D5400785AE2 /* CTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTAppDelegate.m; sourceTree = "<group>"; };
 		D481E31A159E3862007F9065 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D481E31C159E3869007F9065 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D4E08D561683BF9A0051313A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D4E0A7C9159D712E00D7181B /* CTHomeScreenCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHomeScreenCollectionViewCell.h; sourceTree = "<group>"; };
 		D4E0A7CA159D712E00D7181B /* CTHomeScreenCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHomeScreenCollectionViewCell.m; sourceTree = "<group>"; };
 		D4E0A7CC159D745100D7181B /* CTHomeScreenCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHomeScreenCollectionViewFlowLayout.h; sourceTree = "<group>"; };
@@ -51,6 +57,10 @@
 		D4E8C09B15A7D77E001C4E5C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		D4E8C09E15A7D783001C4E5C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		D4EA709915CF7EF600F87A15 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D4F5F34B15FD82C4006A403E /* OTR.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = OTR.jpeg; sourceTree = "<group>"; };
+		D4F5F35315FD86C0006A403E /* Clifton.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Clifton.jpeg; sourceTree = "<group>"; };
+		D4F5F35515FD86C3006A403E /* Newport.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Newport.jpeg; sourceTree = "<group>"; };
+		D4F5F35715FD86F4006A403E /* Cincinnati.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cincinnati.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +81,7 @@
 		D465F0E9159A4D5400785AE2 = {
 			isa = PBXGroup;
 			children = (
+				D4E08D561683BF9A0051313A /* Default-568h@2x.png */,
 				D481E315159E30CB007F9065 /* Images */,
 				D465F0FE159A4D5400785AE2 /* CityTrails */,
 				D465F0F7159A4D5400785AE2 /* Frameworks */,
@@ -131,6 +142,10 @@
 		D481E315159E30CB007F9065 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D4F5F35315FD86C0006A403E /* Clifton.jpeg */,
+				D4F5F34B15FD82C4006A403E /* OTR.jpeg */,
+				D4F5F35515FD86C3006A403E /* Newport.jpeg */,
+				D4F5F35715FD86F4006A403E /* Cincinnati.jpeg */,
 				D4E8C09E15A7D783001C4E5C /* Icon.png */,
 				D4E8C09B15A7D77E001C4E5C /* Icon@2x.png */,
 				D481E31C159E3869007F9065 /* Default@2x.png */,
@@ -197,6 +212,11 @@
 				D4E8C09C15A7D77E001C4E5C /* Icon@2x.png in Resources */,
 				D4E8C09F15A7D783001C4E5C /* Icon.png in Resources */,
 				D40C3F3315EDC43600266A66 /* SQLiteImporter.sqlite in Resources */,
+				D4F5F34C15FD82C4006A403E /* OTR.jpeg in Resources */,
+				D4F5F35415FD86C0006A403E /* Clifton.jpeg in Resources */,
+				D4F5F35615FD86C3006A403E /* Newport.jpeg in Resources */,
+				D4F5F35815FD86F4006A403E /* Cincinnati.jpeg in Resources */,
+				D4E08D571683BF9A0051313A /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

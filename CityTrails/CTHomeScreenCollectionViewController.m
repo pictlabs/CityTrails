@@ -62,6 +62,48 @@
     NSManagedObject *region =  [Regions objectAtIndex:indexPath.row];
     cell.label.text = [region valueForKey:@"regionTitle"];
       cell.label2.text = [region valueForKey:@"regionTitle"];
+    //cell.title = [region valueForKey:@"regionTitle"];
+    
+   if ([cell.label.text isEqualToString: @"Over-the-Rhine"])
+   {cell.imageV.image = [UIImage imageNamed:@"OTR.jpeg"];
+       cell.imageV2.image = [UIImage imageNamed:@"OTR.jpeg"];
+   }
+
+    else if ([cell.label.text isEqualToString: @"Clifton"])
+    {cell.imageV.image = [UIImage imageNamed:@"Clifton.jpeg"];
+        cell.imageV2.image = [UIImage imageNamed:@"Clifton.jpeg"];
+    }
+    
+    else if ([cell.label.text isEqualToString: @"Newport"])
+    {cell.imageV.image = [UIImage imageNamed:@"Newport.jpeg"];
+        cell.imageV2.image = [UIImage imageNamed:@"Newport.jpeg"];
+    }
+    
+    else if ([cell.label.text isEqualToString: @"Downtown Cincinnati"])
+    {cell.imageV.image = [UIImage imageNamed:@"Cincinnati.jpeg"];
+        cell.imageV2.image = [UIImage imageNamed:@"Cincinnati.jpeg"];
+    }
+    
+    else
+        cell.imageV.image = [UIImage imageNamed:@"Icon.png"];
+
+    
+    /* Leaving this here for when I figure out how to key off the row in the database
+     switch (int j)
+    {
+        case 1:
+        {
+          cell.imageV.image = [UIImage imageNamed:@"OTR.jpeg"];
+        }
+        case 2:
+        {
+           cell.imageV.image = [UIImage imageNamed:@"Clifton.jpeg"];
+        }
+        default:
+        {
+           cell.imageV.image = [UIImage imageNamed:@"Icon.png"];
+        }
+    } */
     
     return cell;
 }

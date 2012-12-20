@@ -7,6 +7,7 @@
 //
 
 #import "CTRegionTourListTableViewController.h"
+#import "QuartzCore/QuartzCore.h"
 
 @interface CTRegionTourListTableViewController ()
 

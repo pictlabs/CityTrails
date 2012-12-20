@@ -12,5 +12,7 @@
 
 @property (strong, nonatomic) UILabel* label;
 @property (strong, nonatomic) UILabel* label2;
+@property (strong, nonatomic) UIImageView* imageV;
+@property (strong, nonatomic) UIImageView* imageV2;
 
 @end
