@@ -39,17 +39,15 @@
      [self.tableView insertSubview:blackOverlay aboveSubview:self.tableView];
      
 
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(blackOverlay.bounds.size.width/4, blackOverlay.bounds.size.height-60, blackOverlay.bounds.size.width/2, 40.0)];
-    label.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleTopMargin;
-    label.textAlignment = NSTextAlignmentCenter;
-    label.font = [UIFont boldSystemFontOfSize:14.0];
-    label.backgroundColor = [UIColor clearColor];
-    label.textColor = [UIColor orangeColor];
-    label.text = @"Tap To Dismiss";
-    label.layer.borderColor = [UIColor orangeColor].CGColor;
-    label.layer.borderWidth = 1.0f;
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(blackOverlay.bounds.size.width/4, blackOverlay.bounds.size.height-60, blackOverlay.bounds.size.width/2, 40.0)];
+    button.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleTopMargin;
+    [button setTitle:@"Tap To Dismiss" forState:UIControlStateNormal];
+    button.backgroundColor = [UIColor clearColor];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    button.layer.borderColor = [UIColor orangeColor].CGColor;
+    button.layer.borderWidth = 1.0f;
     
-    [blackOverlay addSubview:label];
+    [blackOverlay addSubview:button];
 
         
     // Uncomment the following line to preserve selection between presentations.

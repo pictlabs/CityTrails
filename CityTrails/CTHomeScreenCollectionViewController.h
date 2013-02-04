@@ -16,5 +16,3 @@
 @property (nonatomic, strong) NSArray *Regions;
 
 @end
-
-//test
