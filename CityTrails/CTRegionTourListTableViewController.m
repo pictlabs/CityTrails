@@ -36,6 +36,7 @@
      blackOverlay.alpha = 0.65;
      blackOverlay.backgroundColor = UIColor.blackColor;
      blackOverlay.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    blackOverlay.tag = 10;
      [self.tableView insertSubview:blackOverlay aboveSubview:self.tableView];
      
 
@@ -46,9 +47,11 @@
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     button.layer.borderColor = [UIColor orangeColor].CGColor;
     button.layer.borderWidth = 1.0f;
+    button.tag = 11;
     
     [blackOverlay addSubview:button];
-
+    
+    [button addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
         
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -57,12 +60,20 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(IBAction)cancel:(id)sender {
+    
+    NSLog(@"Got here");
+    
+   [[self.tableView viewWithTag:10]removeFromSuperview];
+    
+}
+
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration
 {
 
     
-    
 }
+
 
 - (void)didReceiveMemoryWarning
 {
