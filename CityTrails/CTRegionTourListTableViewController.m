@@ -106,11 +106,28 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
+
+    NSInteger j = indexPath.section;
+
+    if (j == 0) {
+        cell.textLabel.text = @"Tour 1";
+    }
     
-    cell.textLabel.text = @"Test Reset";
+    else if (j == 1){
+        cell.textLabel.text = @"Tour 2";
+    }
+    
+    else {
+        cell.textLabel.text = @"Tour";
+    }
+    
+    
+    //return the cell
     
     return cell;
+    
 }
+
 
 /*
 // Override to support conditional editing of the table view.
