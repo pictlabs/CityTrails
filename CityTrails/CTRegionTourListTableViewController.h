@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CTDetailTourListViewController.h"
 
 @interface CTRegionTourListTableViewController : UITableViewController
 

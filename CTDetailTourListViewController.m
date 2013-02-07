@@ -1,19 +1,18 @@
 //
-//  CTRegionTourListTableViewController.m
+//  CTDetailTourListViewController.m
 //  CityTrails
 //
-//  Created by Richard Geier on 6/30/12.
-//  Copyright (c) 2012 Pict Labs. All rights reserved.
+//  Created by Matt Willis on 2/6/13.
+//  Copyright (c) 2013 Pict Labs. All rights reserved.
 //
 
-#import "CTRegionTourListTableViewController.h"
-#import "QuartzCore/QuartzCore.h"
+#import "CTDetailTourListViewController.h"
 
-@interface CTRegionTourListTableViewController ()
+@interface CTDetailTourListViewController ()
 
 @end
 
-@implementation CTRegionTourListTableViewController
+@implementation CTDetailTourListViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,33 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-   
-    
-    CGRect rect = CGRectMake(0.0 ,0.0, self.tableView.bounds.size.width, self.tableView.bounds.size.height);
-     UIView *blackOverlay = [[UIView alloc] initWithFrame:rect];
-     blackOverlay.alpha = 0.65;
-     blackOverlay.backgroundColor = UIColor.blackColor;
-     blackOverlay.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-    blackOverlay.tag = 10;
-     [self.tableView insertSubview:blackOverlay aboveSubview:self.tableView];
-     
 
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(blackOverlay.bounds.size.width/4, blackOverlay.bounds.size.height-60, blackOverlay.bounds.size.width/2, 40.0)];
-    button.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleTopMargin;
-    [button setTitle:@"Tap To Dismiss" forState:UIControlStateNormal];
-    button.backgroundColor = [UIColor clearColor];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    button.layer.borderColor = [UIColor orangeColor].CGColor;
-    button.layer.borderWidth = 1.0f;
-    button.tag = 11;
+      [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     
-    
-    [blackOverlay addSubview:button];
-    
-    [button addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
-        
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -61,74 +36,56 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
--(IBAction)cancel:(id)sender {
-    
-    NSLog(@"Got here");
-    
-   [[self.tableView viewWithTag:10]removeFromSuperview];
-    
-}
-
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration
-{
-
-    
-}
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-// Return the number of sections.
-    return 2;
+
+    // Return the number of sections.
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
- // Return the number of rows in the section.
-    return 1;
+
+    // Return the number of rows in the section.
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
-
-    NSInteger j = indexPath.section;
-
+    
+    NSInteger j = indexPath.row;
+    
     if (j == 0) {
-        cell.textLabel.text = @"Tour 1";
+        cell.textLabel.text = @"Stop 1";
     }
     
     else if (j == 1){
-        cell.textLabel.text = @"Tour 2";
+        cell.textLabel.text = @"Stop 2";
+    }
+    
+    else if (j == 2){
+        cell.textLabel.text = @"Stop 3";
     }
     
     else {
-        cell.textLabel.text = @"Tour";
+        cell.textLabel.text = @"Stop 4";
     }
     
-    
-    //return the cell
-    
     return cell;
-    
 }
-
 
 /*
 // Override to support conditional editing of the table view.
@@ -174,12 +131,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    
-    CTDetailTourListViewController *detailViewController =[[CTDetailTourListViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
-    
+     */
 }
 
 @end

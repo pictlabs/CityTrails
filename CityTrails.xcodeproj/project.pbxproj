@@ -29,6 +29,7 @@
 		D4F5F35415FD86C0006A403E /* Clifton.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D4F5F35315FD86C0006A403E /* Clifton.jpeg */; };
 		D4F5F35615FD86C3006A403E /* Newport.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D4F5F35515FD86C3006A403E /* Newport.jpeg */; };
 		D4F5F35815FD86F4006A403E /* Cincinnati.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D4F5F35715FD86F4006A403E /* Cincinnati.jpeg */; };
+		FDB6544816C3540A00A939C5 /* CTDetailTourListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB6544716C3540A00A939C5 /* CTDetailTourListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,8 @@
 		D4F5F35315FD86C0006A403E /* Clifton.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Clifton.jpeg; sourceTree = "<group>"; };
 		D4F5F35515FD86C3006A403E /* Newport.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Newport.jpeg; sourceTree = "<group>"; };
 		D4F5F35715FD86F4006A403E /* Cincinnati.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cincinnati.jpeg; sourceTree = "<group>"; };
+		FDB6544616C3540A00A939C5 /* CTDetailTourListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTDetailTourListViewController.h; path = ../CTDetailTourListViewController.h; sourceTree = "<group>"; };
+		FDB6544716C3540A00A939C5 /* CTDetailTourListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTDetailTourListViewController.m; path = ../CTDetailTourListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				D4E0A7CA159D712E00D7181B /* CTHomeScreenCollectionViewCell.m */,
 				D4575F6F159EB1D30033F8E6 /* CTRegionTourListTableViewController.h */,
 				D4575F70159EB1D30033F8E6 /* CTRegionTourListTableViewController.m */,
+				FDB6544616C3540A00A939C5 /* CTDetailTourListViewController.h */,
+				FDB6544716C3540A00A939C5 /* CTDetailTourListViewController.m */,
 				D465F0FF159A4D5400785AE2 /* Supporting Files */,
 			);
 			path = CityTrails;
@@ -181,7 +186,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CT;
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Pict Labs";
 			};
 			buildConfigurationList = D465F0EE159A4D5400785AE2 /* Build configuration list for PBXProject "CityTrails" */;
@@ -234,6 +239,7 @@
 				D4E0A7CE159D745100D7181B /* CTHomeScreenCollectionViewFlowLayout.m in Sources */,
 				D4575F72159EB1D30033F8E6 /* CTRegionTourListTableViewController.m in Sources */,
 				D412539515CF9522006A40BD /* CityTrails.xcdatamodeld in Sources */,
+				FDB6544816C3540A00A939C5 /* CTDetailTourListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +263,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -271,8 +281,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 			};
 			name = Debug;
 		};
@@ -282,6 +293,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -289,9 +304,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -303,6 +319,7 @@
 				GCC_PREFIX_HEADER = "CityTrails/CityTrails-Prefix.pch";
 				INFOPLIST_FILE = "CityTrails/CityTrails-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -314,6 +331,7 @@
 				GCC_PREFIX_HEADER = "CityTrails/CityTrails-Prefix.pch";
 				INFOPLIST_FILE = "CityTrails/CityTrails-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
