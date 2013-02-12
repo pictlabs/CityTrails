@@ -17,6 +17,7 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize activeRegion = _activeRegion;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -57,6 +58,7 @@
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:homeScreenCollectionViewController];
     
     [homeScreenCollectionViewController setManagedObjectContext:self.managedObjectContext];
+    
     //Set root view controller to our collectionviewcontroller that shows the collectionview cells
     //[[self window] setRootViewController:homeScreenCollectionViewController];
     
@@ -135,7 +137,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"CityTrails" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"CTModel" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }

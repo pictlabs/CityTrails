@@ -7,6 +7,7 @@
 //
 
 #import "CTHomeScreenCollectionViewController.h"
+#import "CTAppDelegate.h"
 
 @interface CTHomeScreenCollectionViewController ()
 
@@ -25,7 +26,6 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Region" inManagedObjectContext:managedObjectContext];
-    //NSEntityDescription *entity = [NSEntityDescription entityForName:@"Region" inManagedObjectContext:context];
     
     [fetchRequest setEntity:entity];
     NSError *error;
@@ -43,8 +43,15 @@
 
     CTRegionTourListTableViewController *regionTourListTableViewController = [[CTRegionTourListTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     
+    [regionTourListTableViewController setManagedObjectContext:self.managedObjectContext];
+    
     //Push the view onto the navigation controller
     [[self navigationController] pushViewController:regionTourListTableViewController animated:YES];
+    
+    NSManagedObject *region =  [Regions objectAtIndex:indexPath.row];
+    
+    CTAppDelegate *mainDelegate = [[UIApplication sharedApplication] delegate];
+    mainDelegate.activeRegion = [region valueForKey:@"regionTitle"];
     
 }
 

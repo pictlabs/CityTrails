@@ -12,5 +12,7 @@
 @interface CTRegionTourListTableViewController : UITableViewController
 
 @property UIView *blackOverlay;
+@property (nonatomic,strong)  NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSArray *Attractions;
 
 @end

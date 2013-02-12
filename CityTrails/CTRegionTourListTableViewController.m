@@ -8,12 +8,17 @@
 
 #import "CTRegionTourListTableViewController.h"
 #import "QuartzCore/QuartzCore.h"
+#import "CTAppDelegate.h"
 
 @interface CTRegionTourListTableViewController ()
 
 @end
 
+
+
 @implementation CTRegionTourListTableViewController
+
+@synthesize Attractions,managedObjectContext;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -92,7 +97,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 // Return the number of sections.
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -103,15 +108,63 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    
+    CTAppDelegate *mainDelegate = [[UIApplication sharedApplication] delegate];
+    
+    
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
+    
+     
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription  entityForName:@"Region" inManagedObjectContext:managedObjectContext];
+    
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *predicate =[NSPredicate predicateWithFormat:@"regionTitle == %@",mainDelegate.activeRegion];
+    [fetchRequest setPredicate:predicate];
+    
+    NSError *regionErrorFinal = nil;
+    NSArray *fetchedObjects = [managedObjectContext executeFetchRequest:fetchRequest error:&regionErrorFinal];
+    if (fetchedObjects == nil) {
+        
+    }else
+    {
+        NSManagedObject *region = fetchedObjects[0];
+        NSLog(@"Fetched active region object: %@", region);
+       
+        NSFetchRequest *fetchRequest2 = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity2 = [NSEntityDescription  entityForName:@"Attraction" inManagedObjectContext:managedObjectContext];
+        
+        [fetchRequest2 setEntity:entity2];
+        
+        NSPredicate *predicate =[NSPredicate predicateWithFormat:@"region = %@",region];
+        [fetchRequest2 setPredicate:predicate];
+        
+        NSError *regionErrorFinal = nil;
+        NSArray *fetchedObjects2 = [managedObjectContext executeFetchRequest:fetchRequest2 error:&regionErrorFinal];
+        if (fetchedObjects2 == nil) {
+            
+        }else
+        {
+            cell.textLabel.text = [fetchedObjects2[indexPath.section] valueForKey:@"attractionTitle"];
+        }
+        
+        //.textLabel.text = [fetchedObjects[indexPath.section] ob:@"attractionTitle"];
+    }
+    
+    
+    /*
     // Configure the cell...
 
     NSInteger j = indexPath.section;
 
     if (j == 0) {
-        cell.textLabel.text = @"Tour 1";
+        cell.textLabel.text = mainDelegate.activeRegion;
+        //cell.textLabel.text = @"Tour 1";
     }
     
     else if (j == 1){
@@ -121,7 +174,7 @@
     else {
         cell.textLabel.text = @"Tour";
     }
-    
+    */
     
     //return the cell
     

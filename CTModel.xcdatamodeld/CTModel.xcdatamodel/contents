@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AttendeeList" syncable="YES">
+        <relationship name="gathering" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Gathering" inverseName="attendeeList" inverseEntity="Gathering" syncable="YES"/>
+        <relationship name="persons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="attendeeList" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Attraction" syncable="YES">
+        <attribute name="attractionCity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attractionLatitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="attractionLongitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="attractionOverviewText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attractionState" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attractionTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attractionType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="attractionZipcode" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="concerts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Concert" inverseName="attraction" inverseEntity="Concert" syncable="YES"/>
+        <relationship name="festivals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Festival" inverseName="attraction" inverseEntity="Festival" syncable="YES"/>
+        <relationship name="gatherings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Gathering" inverseName="attraction" inverseEntity="Gathering" syncable="YES"/>
+        <relationship name="historicalTimelines" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="HistoricalTimeline" inverseName="attraction" inverseEntity="HistoricalTimeline" syncable="YES"/>
+        <relationship name="region" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="attractions" inverseEntity="Region" syncable="YES"/>
+        <relationship name="restaurants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Restaurant" inverseName="attraction" inverseEntity="Restaurant" syncable="YES"/>
+        <relationship name="sports" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sport" inverseName="attraction" inverseEntity="Sport" syncable="YES"/>
+        <relationship name="walks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Walk" inverseName="attraction" inverseEntity="Walk" syncable="YES"/>
+    </entity>
+    <entity name="Band" syncable="YES">
+        <relationship name="concert" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Concert" inverseName="bands" inverseEntity="Concert" syncable="YES"/>
+    </entity>
+    <entity name="Concert" syncable="YES">
+        <relationship name="attraction" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Attraction" inverseName="concerts" inverseEntity="Attraction" syncable="YES"/>
+        <relationship name="bands" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Band" inverseName="concert" inverseEntity="Band" syncable="YES"/>
+        <relationship name="venue" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Venue" inverseName="concert" inverseEntity="Venue" syncable="YES"/>
+    </entity>
+    <entity name="Festival" syncable="YES">
+        <relationship name="attraction" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Attraction" inverseName="festivals" inverseEntity="Attraction" syncable="YES"/>
+        <relationship name="venues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Venue" inverseName="festival" inverseEntity="Venue" syncable="YES"/>
+    </entity>
+    <entity name="Gathering" syncable="YES">
+        <relationship name="attendeeList" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="AttendeeList" inverseName="gathering" inverseEntity="AttendeeList" syncable="YES"/>
+        <relationship name="attraction" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Attraction" inverseName="gatherings" inverseEntity="Attraction" syncable="YES"/>
+    </entity>
+    <entity name="HistoricalDate" syncable="YES">
+        <relationship name="historicalTimeline" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="HistoricalTimeline" inverseName="historicalDates" inverseEntity="HistoricalTimeline" syncable="YES"/>
+    </entity>
+    <entity name="HistoricalTimeline" syncable="YES">
+        <relationship name="attraction" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Attraction" inverseName="historicalTimelines" inverseEntity="Attraction" syncable="YES"/>
+        <relationship name="historicalDates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HistoricalDate" inverseName="historicalTimeline" inverseEntity="HistoricalDate" syncable="YES"/>
+    </entity>
+    <entity name="Menu" syncable="YES">
+        <relationship name="restaurant" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Restaurant" inverseName="menu" inverseEntity="Restaurant" syncable="YES"/>
+    </entity>
+    <entity name="Person" syncable="YES">
+        <relationship name="attendeeList" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="AttendeeList" inverseName="persons" inverseEntity="AttendeeList" syncable="YES"/>
+    </entity>
+    <entity name="Region" syncable="YES">
+        <attribute name="attractionCount" attributeType="Integer 32" minValueString="1" defaultValueString="1" syncable="YES"/>
+        <attribute name="regionCity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="regionLatitude" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="regionLongitude" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="regionOverviewText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="regionState" optional="YES" attributeType="String" minValueString="2" syncable="YES"/>
+        <attribute name="regionTitle" attributeType="String" maxValueString="50" syncable="YES"/>
+        <attribute name="regionZipcode" attributeType="String" minValueString="5" maxValueString="9" syncable="YES"/>
+        <relationship name="attractions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attraction" inverseName="region" inverseEntity="Attraction" syncable="YES"/>
+    </entity>
+    <entity name="Restaurant" syncable="YES">
+        <relationship name="attraction" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Attraction" inverseName="restaurants" inverseEntity="Attraction" syncable="YES"/>
+        <relationship name="menu" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Menu" inverseName="restaurant" inverseEntity="Menu" syncable="YES"/>
+    </entity>
+    <entity name="Sport" syncable="YES">
+        <relationship name="attraction" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Attraction" inverseName="sports" inverseEntity="Attraction" syncable="YES"/>
+        <relationship name="venue" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Venue" inverseName="sport" inverseEntity="Venue" syncable="YES"/>
+    </entity>
+    <entity name="Venue" syncable="YES">
+        <relationship name="concert" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Concert" inverseName="venue" inverseEntity="Concert" syncable="YES"/>
+        <relationship name="festival" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Festival" inverseName="venues" inverseEntity="Festival" syncable="YES"/>
+        <relationship name="sport" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Sport" inverseName="venue" inverseEntity="Sport" syncable="YES"/>
+    </entity>
+    <entity name="Walk" syncable="YES">
+        <relationship name="attraction" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Attraction" inverseName="walks" inverseEntity="Attraction" syncable="YES"/>
+        <relationship name="waypoints" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Waypoint" inverseName="walk" inverseEntity="Waypoint" syncable="YES"/>
+    </entity>
+    <entity name="Waypoint" syncable="YES">
+        <relationship name="walk" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Walk" inverseName="waypoints" inverseEntity="Walk" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AttendeeList" positionX="-434" positionY="261" width="128" height="73"/>
+        <element name="Attraction" positionX="-29" positionY="-25" width="128" height="283"/>
+        <element name="Band" positionX="-432" positionY="72" width="128" height="58"/>
+        <element name="Concert" positionX="-272" positionY="72" width="128" height="88"/>
+        <element name="Festival" positionX="-272" positionY="135" width="128" height="73"/>
+        <element name="Gathering" positionX="-272" positionY="261" width="128" height="73"/>
+        <element name="HistoricalDate" positionX="-38" positionY="342" width="128" height="58"/>
+        <element name="HistoricalTimeline" positionX="-38" positionY="261" width="128" height="73"/>
+        <element name="Menu" positionX="-434" positionY="-54" width="128" height="58"/>
+        <element name="Region" positionX="-36" positionY="-295" width="128" height="180"/>
+        <element name="Restaurant" positionX="-272" positionY="-54" width="128" height="73"/>
+        <element name="Sport" positionX="-272" positionY="198" width="128" height="73"/>
+        <element name="Venue" positionX="-432" positionY="135" width="128" height="88"/>
+        <element name="Walk" positionX="-272" positionY="9" width="128" height="73"/>
+        <element name="Waypoint" positionX="-434" positionY="9" width="128" height="58"/>
+        <element name="Person" positionX="160" positionY="192" width="128" height="60"/>
+    </elements>
+</model>
